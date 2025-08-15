@@ -12,9 +12,9 @@ if [ ! -x "$(command -v curl)" ]; then
 	exit 1
 fi
 
-# 创建我的 dotfiles 的符号链接（如果已存在则不会覆盖）
-[ -d "$HOME/.config/wezterm" ] && ln -s $HOME/.dotfiles/.config/wezterm $HOME/.config/wezterm
-[ -f "$HOME/.bashrc" ] || ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
-[ -f "$HOME/.bash_profile" ] || ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+# 创建我的 dotfiles 的符号链接（如果已存在则不会覆盖，也不会报错）
+[ -d "$HOME/.config/wezterm" ] && ln -sn $HOME/.dotfiles/.config/wezterm $HOME/.config/wezterm
+[ -d "$HOME/.config/nvim" ] && ln -sn $HOME/.dotfiles/.config/nvim $HOME/.config/nvim
+[ -f "$HOME/.bash_profile" ] || ln -sn $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
-source $HOME/.bashrc
+[ -f "$HOME/.bashrc" ] && source $HOME/.bashrc
