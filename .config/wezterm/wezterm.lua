@@ -109,7 +109,6 @@ local config = {
                 k.multiple_actions(':w'),
             })
         ),
-        k.cmd_ctrl_key('p', k.multiple_actions('aiaasxylx1.t!@#')),
         k.cmd_to_tmux_prefix('1', '1'),
         k.cmd_to_tmux_prefix('2', '2'),
         k.cmd_to_tmux_prefix('3', '3'),
